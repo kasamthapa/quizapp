@@ -194,7 +194,7 @@ nextBtn.addEventListener('click', () => {
 
 // Function to display the current question and options
 function showQuestions(index) {
-    nxtBtn.style.PointerEvents="none";
+      nextBtn.style.pointerEvents="none";
     setTimer();
     // Shuffle options for randomness
     // questions.sort(() => Math.random() - 0.5);
