@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ne">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>नेपाली ज्ञान क्विज</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <!-- Main content of the quiz application -->
+  <main class="main">
+  
+    <!-- Header with logo and navigation links -->
+    <header class="header">
+      <a class="logo">
+        <span style="color: red;">?</span>
+        <span style="color: green;">&check;</span>
+        <span style="color: blue;">!</span>
+      </a>
+      <nav>
+        <!-- Navigation links -->
+        <a href="#" class="active">गृहपृष्ठ</a>
+        <a href="#">प्रश्नावली</a>
+        <a href="#">सम्पर्क गर्नुहोस्</a>
+        <a href="#">हाम्रो बारेमा</a>
+      </nav>
+    </header>
+    
+    <!-- Main content container -->
+    <div class="container">
+    
+      <!-- Quiz section with questions and options -->
+      <section class="quiz-section">
+        <div class="quiz-box">
+          <div class="quiz-header">
+            <h1>नेपाली ज्ञान क्विज</h1>
+            <!-- Timer and score display -->
+            <div class="subhead">
+              <p class="timer"></p>
+              <p class="score"></p>
+            </div>
+          </div>
+          
+          <div class="quiz-content">
+            <!-- Display the question here -->
+            <span class="quiz-question"></span>
+            <div class="options"></div>
+          </div>
+          
+          <div class="quiz-footer">
+            <!-- Question counter and next button -->
+            <span class="question-counter"></span>
+            <button class="next-btn">अर्को</button>
+          </div>
+        </div>
+
+        <!-- Result section after quiz completion -->
+        <div class="result-box">
+          <h2>क्विज परिणाम</h2>
+          <div class="progress">
+            <!-- Circular progress bar -->
+            <div class="circular-progress">
+              <span class="circular-score">0%</span>
+            </div>
+            <span class="progress-score"></span>
+          </div>
+          
+          <div class="buttons">
+            <!-- Retry and home buttons -->
+            <button class="btn try-again">पुन:प्रयास गर्नुहोस्</button>
+            <button class="btn go-home">घर जानुहोस्</button>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Home section with start button -->
+      <section id="home">
+        <h1>"नेपाली ज्ञान क्विज"</h1>
+        <p>"तपाईंको ज्ञान परिक्षण गर्न तयार हुनुहोस्। रमाइलो गर्दै सिक्न सकिन्छ!"</p>
+        <button class="start-btn" onclick="showInfo()">खेल सुरु गर्नुहोस्</button>
+      </section>
+      
+    </div> <!-- End of container -->
+
+  </main>
+
+  <!-- Pop-up information section with quiz instructions -->
+  <section class="pop-info">
+    <h2 class="info-title">क्विज कसरी खेल्ने?</h2>
+    <div class="info">
+      <p>१. प्रश्नलाई ध्यान दिएर पढ्नुहोस्।</p>
+      <p>२. सही उत्तरमा क्लिक गर्नुहोस्।</p>
+      <p>३. गलत उत्तर छान्दा, सही उत्तर हरियो रंगमा देखिनेछ।</p>
+      <p>४. सबै प्रश्नहरू पूरा गरेपछि आफ्नो स्कोर हेर्नुहोस्।</p>
+      <div class="info-btns">
+        <!-- Buttons for exiting or continuing -->
+        <button class="info-btn exit-btn" onclick="hideInfo()">निस्कनुहोस्</button>
+        <a class="info-btn continue-btn">जारी राख्नुहोस्</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Linking external JavaScript file -->
+  <script src="script.js"></script>
+  
+</body>
+
+</html>

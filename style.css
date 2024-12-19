@@ -1,0 +1,446 @@
+/* Importing fonts from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Funnel+Sans:ital,wght@0,300..800;1,300..800&family=Laila:wght@300;400;500;600;700&family=League+Spartan:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Funnel+Sans:ital,wght@0,300..800;1,300..800&family=Kalam:wght@300;400;700&family=Laila:wght@300;400;500;600;700&family=League+Spartan:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* Universal styles for all elements */
+* {
+  box-sizing: border-box; /* Ensures all elements use the same box model */
+  font-family: "Laila", serif; /* Default font */
+}
+
+/* Body styles */
+body {
+  margin: 0;
+  background-color: #080d21; /* Dark background */
+  overflow: hidden; /* Prevent scrolling */
+}
+
+/* Main container, takes full viewport height */
+.main {
+  min-height: 100vh;
+}
+
+.main.active {
+  pointer-events: none; /* Disable interactions when active */
+  filter: blur(4px); /* Apply blur when active */
+}
+
+/* Flexbox container for the page layout */
+.container {
+  display: flex;
+  width: 200%; /* 2x width for the layout */
+  height: 100vh; /* Full viewport height */
+}
+
+/* Header styles */
+.header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+}
+
+.header .logo {
+  font-size: 30px;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+/* Navigation styles */
+nav {
+  display: flex;
+  gap: 2rem;
+}
+
+nav a {
+  font-size: 18px;
+  text-decoration: none;
+  color: #F8F8F8;
+  transition: all .5s ease;
+}
+
+nav a:hover,
+a.active {
+  color: #d40c77; /* Active link color */
+}
+
+/* Home section styling */
+#home {
+  position: relative;
+  left: -50%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#home h1 {
+  font-family: "Kalam", serif;
+  font-size: 80px;
+  color: #F8F8F8;
+  font-weight: 700;
+  margin-bottom: -5px;
+}
+
+#home p {
+  color: #F8F8F8;
+  font-size: 20px;
+}
+
+/* Start button styles */
+.start-btn {
+  border: none;
+  padding: 5px 15px;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 5px;
+  background-color: #d40c77;
+  color: #fff;
+  cursor: pointer;
+  transition: all .3s ease;
+}
+
+.start-btn:hover {
+  padding: 6px 16px;
+  box-shadow: 0px 0px 5px #fff;
+}
+
+/* Pop-up info styles */
+.pop-info {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, 50%) scale(.9);
+  width: 500px;
+  background: rgb(34, 35, 79);
+  z-index: 1000;
+  border-radius: 6px;
+  padding: 14px;
+  pointer-events: none;
+  opacity: 0;
+  transition: all .3s ease;
+}
+
+.pop-info.active {
+  transform: translate(-50%, 50%) scale(1.3); /* Scale up when active */
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.pop-info h2 {
+  color: #F88989;
+  font-size: 50px;
+  margin: 5px;
+  text-align: center;
+}
+
+.pop-info p {
+  margin-top: 2px;
+  color: #F8F8F8;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+/* Info section layout */
+.info {
+  text-align: center;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Button container for info section */
+.info-btns {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.info-btn {
+  background-color: #d40c77;
+  border: none;
+  color: #fff;
+  border-radius: 6px;
+  padding: 5px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.info-btn:nth-child(1) {
+  background-color: #fff;
+  color: #d40c77;
+  border: 1px solid #d40c77;
+  transition: all .3s;
+}
+
+.info-btn:nth-child(1):hover {
+  background-color: #d40c77;
+  color: #fff;
+}
+
+/* Quiz section styles */
+.quiz-section {
+  width: 100%;
+  background-color: #080d21;
+  color: white;
+  position: relative;
+  left: -50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  transition: all 0.8s 0.5s ease-in;
+}
+
+.quiz-section.active {
+  left: 0;
+}
+
+/* Quiz box styles */
+.quiz-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 500px;
+  border: 1px solid #d40c77;
+  border-radius: 4px;
+  padding: 5px 10px;
+  transform: scale(.9);
+  opacity: 0;
+}
+
+.quiz-box.active {
+  transform: scale(1);
+  transition: 0.8s ease;
+  transition-delay: 0.8s;
+  opacity: 1;
+}
+
+/* Quiz header styles */
+.quiz-header {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.quiz-header h1 {
+  text-align: center;
+  background: linear-gradient(45deg, transparent, #d40c77, transparent);
+}
+
+/* Subhead styles */
+.subhead {
+  display: flex;
+  justify-content: space-between;
+}
+
+.subhead p {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.score {
+  background-color: #d40c77;
+  padding: 2px 5px;
+  border-radius: 4px;
+}
+
+/* Quiz content styles */
+.quiz-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 10px 0px;
+  border-top: 1px solid #d40c77;
+  border-bottom: 1px solid #d40c77;
+  margin: 15px 0px;
+}
+
+/* Quiz question styles */
+.quiz-question {
+  display: inline-block;
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+/* Option styles */
+.options {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.option {
+  border: 1px solid rgb(62, 60, 60);
+  border-radius: 4px;
+  padding: 10px;
+  width: 100%;
+  margin-bottom: 15px;
+  cursor: pointer;
+  opacity: 0.8;
+  transition: all 0.2s ease-in;
+}
+
+.option:hover {
+  opacity: 1;
+  box-shadow: 0px 0px 3px #fff;
+}
+
+/* Correct/Incorrect option styles */
+.option.correct {
+  border: 1px solid rgb(23, 202, 23);
+  color: rgb(16, 150, 16);
+}
+
+.option.incorrect {
+  border: 1px solid red;
+}
+
+/* Quiz footer styles */
+.quiz-footer {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Next button styles */
+.next-btn {
+  background: rgb(36, 31, 31);
+  color: #727377;
+  border: 1px solid #727377;
+  border-radius: 4px;
+  padding: 2px 15px;
+  font-size: 18px;
+  transition: 0.3s;
+  cursor: pointer;
+  pointer-events: none;
+}
+
+.next-btn:hover {
+  background-color: #d40c77;
+  color: #fff;
+}
+
+/* Result box styles */
+.result-box {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(.9);
+  border: 1px solid #d40c77;
+  border-radius: 4px;
+  box-shadow: 0px 0px 10px #fff;
+  background: transparent;
+  width: 500px;
+  padding: 15px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.result-box.active {
+  opacity: 1;
+  pointer-events: auto;
+  transition: .2s ease;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* Result heading styles */
+.result-box h2 {
+  width: 100%;
+  text-align: center;
+  background: linear-gradient(45deg, transparent, #d40c77, transparent);
+  font-size: 50px;
+  font-weight: 800;
+}
+
+/* Progress styles */
+.progress {
+  width: 300px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+/* Circular progress styles */
+.circular-progress {
+  background: conic-gradient(#d40c77 3.6deg, #727377 0deg);
+  font-size: 35px;
+  font-weight: 700;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.circular-progress::before {
+  content: "";
+  position: absolute;
+  width: 210px;
+  height: 210px;
+  background-color: #080d21;
+  border-radius: 50%;
+}
+
+/* Circular score container */
+.circular-score {
+  position: relative;
+}
+
+/* Score text styling */
+.progress-score {
+  font-size: 23px;
+  font-weight: 600;
+}
+
+/* Button container in result box */
+.result-box .buttons {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Button styles */
+.result-box .buttons .btn {
+  padding: 5px 10px;
+  font-size: 18px;
+  border: 1px solid #fff;
+  border-radius: 4px;
+  background-color: #d40c77;
+  color: #fff;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.result-box .buttons .btn:nth-child(2) {
+  background-color: #080d21;
+  border: 1px solid #d40c77;
+}
+
+.result-box .buttons .btn:nth-child(1):hover {
+  background-color: #a20d5d;
+}
+
+.result-box .buttons .btn:nth-child(2):hover {
+  background-color: #d40c77;
+}
