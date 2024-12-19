@@ -243,19 +243,22 @@ function answerCheck(option, index) {
     if (correctAns == userAns) {
         option.classList.add('correct');  // Highlight correct answer
         scoreCount++;  // Increase score
+        nextBtn.style.pointerEvents = "auto"; 
     } else {
         // Highlight the correct and incorrect options
         document.querySelectorAll('.option').forEach((opt) => {
             if (opt.textContent.trim() === correctAns) {
                 opt.classList.add('correct');
                 opt.style.pointerEvents = "none";
+                nextBtn.style.pointerEvents = "auto"; 
             } else {
                 opt.classList.add('incorrect');
+                nextBtn.style.pointerEvents = "auto"; 
             }
         });
     }
 
-    nextBtn.style.pointerEvents = "auto";  // Enable next button after selection
+     // Enable next button after selection
 }
 
 // Function to show the result after completing the quiz
