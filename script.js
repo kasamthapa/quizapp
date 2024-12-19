@@ -15,7 +15,7 @@ const questions = [
         number: 2,
         question: "नेपालको राष्ट्रिय फूल कुन हो?",
         correct: "ख) लालीगुराँस",
-        options: 
+        options: [
             "क) चमेली",
             "ख) लालीगुराँस",
             "ग) धुपी",
@@ -194,7 +194,7 @@ nextBtn.addEventListener('click', () => {
 
 // Function to display the current question and options
 function showQuestions(index) {
-      nextBtn.style.pointerEvents="none";
+    nextBtn.style.pointerEvents="none";
     setTimer();
     // Shuffle options for randomness
     // questions.sort(() => Math.random() - 0.5);
@@ -244,22 +244,19 @@ function answerCheck(option, index) {
     if (correctAns == userAns) {
         option.classList.add('correct');  // Highlight correct answer
         scoreCount++;  // Increase score
-        
     } else {
         // Highlight the correct and incorrect options
         document.querySelectorAll('.option').forEach((opt) => {
             if (opt.textContent.trim() === correctAns) {
                 opt.classList.add('correct');
                 opt.style.pointerEvents = "none";
-                
             } else {
                 opt.classList.add('incorrect');
-                nextBtn.style.pointerEvents = "auto"; 
             }
         });
     }
 
-     nextBtn.style.pointerEvents = "auto"; // Enable next button after selection
+    nextBtn.style.pointerEvents = "auto";  // Enable next button after selection
 }
 
 // Function to show the result after completing the quiz
@@ -308,3 +305,4 @@ function setTimer() {
 function stopTimer() {
     clearInterval(timer);
 }
+
