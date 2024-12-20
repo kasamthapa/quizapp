@@ -244,6 +244,7 @@ function answerCheck(option, index) {
     if (correctAns == userAns) {
         option.classList.add('correct');  // Highlight correct answer
         scoreCount++;  // Increase score
+      
     } else {
         // Highlight the correct and incorrect options
         document.querySelectorAll('.option').forEach((opt) => {
@@ -255,7 +256,10 @@ function answerCheck(option, index) {
             }
         });
     }
-
+    
+    if(index==questions.length){
+        nextBtn.style.pointerEVents="auto";
+    }
     nextBtn.style.pointerEvents = "auto";  // Enable next button after selection
 }
 
