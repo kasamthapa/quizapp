@@ -183,14 +183,15 @@ let scoreCount = 0;  // Tracks the user's score
 // Next button event listener - moves to the next question or shows result
 nextBtn.addEventListener('click', () => {
     stopTimer();
-    if (questionCount < questions.length) {
+    if (questionCount < questions.length - 1) { // Adjusted condition
         questionCount++;
         showQuestions(questionCount);
         questionCounter(questionCount);
     } else {
-        resultShow();
+        resultShow(); // Show result when on the last question
     }
 });
+
 
 // Function to display the current question and options
 function showQuestions(index) {
@@ -257,9 +258,7 @@ function answerCheck(option, index) {
         });
     }
     
-    if(index==questions.length){
-        nextBtn.style.pointerEVents="auto";
-    }
+    
     nextBtn.style.pointerEvents = "auto";  // Enable next button after selection
 }
 
